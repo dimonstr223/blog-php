@@ -1,4 +1,5 @@
 <?php
+include('path.php');
 include('app/include/header.php');
 include('app/controllers/users.php');
 ?>
@@ -33,7 +34,7 @@ include('app/controllers/users.php');
 			<div class="w-100"></div>
 			<div class="form-btns mb-3 col-12 col-md-4">
 				<button type="submit" class="btn btn-secondary" name="submit">Регистрация</button>
-				<a class="form-link" href="login.html">Авторизироваться</a>
+				<a class="form-link" href="login.php">Авторизироваться</a>
 			</div>
 		</form>
 	</div>
