@@ -309,3 +309,7 @@ header ul li ul li a {
 .form-control {
   height: 3.3rem;
 }
+
+.err {
+  color: #e00000;
+}
