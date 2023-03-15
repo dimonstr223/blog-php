@@ -313,3 +313,6 @@ header ul li ul li a {
 .err {
   color: #e00000;
 }
+.success {
+  color: #1ec71e;
+}

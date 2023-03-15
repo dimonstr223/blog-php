@@ -2,6 +2,7 @@
 include "app/db/db.php";
 
 $errMsg = '';
+$successMsg = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$table = 'users';
@@ -19,19 +20,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	} elseif ($passF !== $passS) {
 		$errMsg	= 'Пароли не совпадают!';
 	} else {
-		$pass = password_hash($passS, PASSWORD_DEFAULT);
+		$emailExist = selectOne($table, ['email' => $email]);
 
-		$post = [
-			'username' => $user,
-			'email' => $email,
-			'password' => $pass,
-			'admin' => $admin,
-		];
+		if ($emailExist) {
+			$errMsg = 'Эта почта уже используется!';
+		} else {
+			$pass = password_hash($passS, PASSWORD_DEFAULT);
 
-		$id = insert($table, $post);
+			$post = [
+				'username' => $user,
+				'email' => $email,
+				'password' => $pass,
+				'admin' => $admin,
+			];
 
-		$lastInsert = selectOne($table, ['id' => $id]);
-		test($lastInsert);
+			$id = insert($table, $post);
+
+			$lastInsert = selectOne($table, ['id' => $id]);
+
+			$successMsg = '<b>' . $user . '</b>' . ' успешно зарегистрирован!';
+		}
 	}
 } else {
 	$user = '';
