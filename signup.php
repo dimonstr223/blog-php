@@ -11,7 +11,6 @@ include('app/controllers/users.php');
 			<h2 class="form-title title">Регистрация</h2>
 			<div class="mb-3 col-12 col-md-4 err">
 				<p class="err"><?= $errMsg ?></p>
-				<p class="success"><?= $successMsg ?></p>
 			</div>
 			<div class="w-100"></div>
 			<div class="mb-3 col-12 col-md-4">
@@ -38,7 +37,7 @@ include('app/controllers/users.php');
 			</div>
 			<div class="w-100"></div>
 			<div class="form-btns mb-3 col-12 col-md-4">
-				<button type="submit" class="btn btn-secondary" name="submit">Регистрация</button>
+				<button type="submit" class="btn btn-secondary" name="submit-reg">Регистрация</button>
 				<a class="form-link" href="login.php">Авторизироваться</a>
 			</div>
 		</form>

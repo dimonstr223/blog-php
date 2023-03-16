@@ -1,7 +1,10 @@
 <?php
 
+
 require('connect.php ');
 
+// метод запускат сессию
+session_start();
 
 function test($value)
 {
@@ -159,4 +162,4 @@ function delete($table, $id)
 // test(selectOne('users'));
 // test(insert('users', $arrData));
 // test(update('users', 2, $arrData));
-test(delete('users', 9));
+// test(delete('users', 9));

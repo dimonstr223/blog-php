@@ -1,25 +1,31 @@
-<?php include('path.php') ?>
-
-<?php include('app/include/header.php') ?>
-
+<?php
+include('path.php');
+include('app/controllers/users.php');
+include('app/include/header.php');
+?>
 <div class="content">
 	<div class="container">
-		<form class="signup-form row justify-content-md-center" method="post" action="signup.html">
+		<form class="signup-form row justify-content-md-center" method="post" action="login.php">
 			<h2 class="form-title title">Войти в аккаунт</h2>
+			<div class="mb-3 col-12 col-md-4 err">
+				<p class="err"><?= $errMsg ?></p>
+			</div>
+			<div class="w-100"></div>
+
 			<div class="mb-3 col-12 col-md-4">
-				<label for="formGroupExampleInput" class="form-label">Логин</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" />
+				<label for="formGroupExampleInput" class="form-label">E-mail</label>
+				<input type="email" class="form-control" name="email" id="formGroupExampleInput" placeholder="Email" />
 			</div>
 
 			<div class="w-100"></div>
 			<div class="mb-3 col-12 col-md-4">
 				<label for="exampleInputPassword1" class="form-label">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" />
+				<input type="password" class="form-control" name="pass" id="exampleInputPassword1" />
 			</div>
 			<div class="w-100"></div>
 
 			<div class="form-btns mb-3 col-12 col-md-4">
-				<button type="button" class="btn btn-secondary">Войти</button>
+				<button type="submit" class="btn btn-secondary" name="submit-log">Войти</button>
 				<a class="form-link" href="signup.php">Зарегистрироваться</a>
 			</div>
 		</form>
