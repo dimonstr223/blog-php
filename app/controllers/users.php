@@ -5,6 +5,21 @@ $table = 'users';
 
 $errMsg = '';
 
+function userAuth($user)
+{
+	// пихаем в суперглобальный массив $_SESSION данные текущего юзера
+	$_SESSION['id'] = $user['id'];
+	$_SESSION['username'] = $user['username'];
+	$_SESSION['admin'] = $user['admin'];
+
+	if ($_SESSION['admin']) {
+		header('location: ' . BASE_URL . 'admin/admin.php');
+	}
+
+	// отправляем юзера на главную страницу
+	header('location: ' . BASE_URL);
+}
+
 // проверяем является ли метод запроса страницы - 'POST'
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit-reg'])) {
 
@@ -45,17 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit-reg'])) {
 			// запрашиваем из БД зарегистрированного юзера
 			$user = selectOne($table, ['id' => $id]);
 
-			// пихаем в суперглобальный массив $_SESSION данные текущего юзера
-			$_SESSION['id'] = $user['id'];
-			$_SESSION['username'] = $user['username'];
-			$_SESSION['admin'] = $user['admin'];
-
-			if ($_SESSION['admin']) {
-				header('location: ' . BASE_URL . 'admin/admin.php');
-			}
-
-			// отправляем юзера на главную страницу
-			header('location: ' . BASE_URL);
+			userAuth($user);
 
 			// $successMsg = '<b>' . $username . '</b>' . ' успешно зарегистрирован!';
 
@@ -78,15 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit-log'])) {
 
 		if ($existence && password_verify($pass, $existence['password'])) {
 
-			$_SESSION['id'] = $existence['id'];
-			$_SESSION['username'] = $existence['username'];
-			$_SESSION['admin'] = $existence['admin'];
-
-			if ($_SESSION['admin']) {
-				header('location: ' . BASE_URL . 'admin/admin.php');
-			}
-
-			header('location: ' . BASE_URL);
+			userAuth($existence);
 		} else {
 			$errMsg = 'Неверный логин или пароль!';
 		}
