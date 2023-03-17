@@ -1,3 +1,7 @@
+<?php include '../../path.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet" />
-	<link rel="stylesheet" href="/assets/css/style.css" />
+	<link rel="stylesheet" href="/assets/css/admin.css" />
 </head>
 
 <body>
@@ -27,33 +31,12 @@
 				<nav class="col-8">
 					<ul>
 						<li><a href="<?= BASE_URL ?>">Главная</a></li>
-						<li><a href="#">О нас</a></li>
-						<li><a href="#">Услуги</a></li>
 						<li>
-							<? if (isset($_SESSION['id'])) : ?>
-
 							<a href="#"><i class="icon fa-solid fa-user"></i>
 								<?= $_SESSION['username'] ?>
 							</a>
-							<ul>
-								<? if ($_SESSION['admin']) : ?>
-								<li><a href="<?php echo BASE_URL . 'admin/posts/' ?>">Админ панель</a></li>
-								<? endif; ?>
-
-								<li><a href="<?= BASE_URL . 'logout.php' ?>">Выход</a></li>
-							</ul>
-
-							<? else : ?>
-
-							<a href="<?= BASE_URL . 'login.php' ?>"><i class="icon fa-solid fa-user"></i>
-								Вход
-							</a>
-							<ul>
-								<li><a href="<?= BASE_URL . 'signup.php' ?>">Регистрация</a></li>
-							</ul>
-
-							<? endif; ?>
 						</li>
+						<li><a href="<?= BASE_URL . 'logout.php' ?>">Выход</a></li>
 					</ul>
 				</nav>
 			</div>
