@@ -4,20 +4,12 @@ include '../../app/include/header-admin.php';
 <div class="content">
 	<div class="container">
 		<div class="content-wrap row">
-			<div class="admin-panel col-2">
-				<ul class="sidebar">
-					<li class="sidebar__item"><a class="sidebar__link" href="#">Посты</a></li>
-					<li class="sidebar__item"><a class="sidebar__link" href="#">Записи</a></li>
-					<li class="sidebar__item"><a class="sidebar__link" href="#">Юзеры</a></li>
-					<li class="sidebar__item"><a class="sidebar__link" href="#">Категории</a></li>
-				</ul>
-			</div>
+			<?php include '../../app/include/admin-panel.php' ?>
 			<div class="posts col-10">
 				<div class="buttons">
-					<button class="btn btn-success">Add post</button>
-					<button class="btn btn-success">Manage post</button>
+					<a href="create.php" class="btn btn-success">Создать</a>
 				</div>
-				<h3 class="posts-title">Управление постами</h3>
+				<h3 class="posts-title">Управление статьями</h3>
 				<div class="row table-title">
 					<div class="table-title__item id col-1">ID</div>
 					<div class="table-title__item name col-5">Название</div>
