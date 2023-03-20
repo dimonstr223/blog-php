@@ -1,7 +1,7 @@
 <?php
 include('path.php');
-include('app/include/header.php');
 include('app/controllers/users.php');
+include('app/include/header.php');
 ?>
 
 

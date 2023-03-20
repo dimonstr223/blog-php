@@ -1,7 +1,7 @@
 <?php
 
 
-require('connect.php ');
+require('connect.php');
 
 // метод запускат сессию
 session_start();
