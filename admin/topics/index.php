@@ -1,4 +1,5 @@
 <?php
+include '../../app/controllers/topics.php';
 include '../../app/include/header-admin.php';
 ?>
 <div class="content">
@@ -15,8 +16,19 @@ include '../../app/include/header-admin.php';
 					<div class="table-title__item name col-5">Название</div>
 					<div class="table-title__item edit col-4 ">Редактировать</div>
 				</div>
-				<div class="topics">
-					<div class="row topic">
+				<div class="items">
+					<?php foreach ($topics as $key => $value) : ?>
+						<div class="row topic">
+							<div class="topic__item id col-1"><?= $key + 1 ?></div>
+							<div class="topic__item name col-5"><?= $value['name'] ?></div>
+							<div class="topic__item edit col-2 col-green"><a href="edit.php?id=<?= $value['id'] ?>">Edit</a></div>
+							<div class="topic__item delete col-2 col-red"><a href="edit.php?del_id=<?= $value['id'] ?>">Delete</a></div>
+						</div>
+					<?php endforeach ?>
+
+
+
+					<!-- <div class="row topic">
 						<div class="topic__item id col-1">1</div>
 						<div class="topic__item name col-5">Какое-то Название</div>
 						<div class="topic__item edit col-2 col-green"><a href="#">Edit</a></div>
@@ -33,7 +45,7 @@ include '../../app/include/header-admin.php';
 						<div class="topic__item name col-5">Какое-то Название</div>
 						<div class="topic__item edit col-2 col-green"><a href="#">Edit</a></div>
 						<div class="topic__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

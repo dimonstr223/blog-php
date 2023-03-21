@@ -79,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit-log'])) {
 		$errMsg = 'Не все поля заполнены!';
 	} else {
 		$existence = selectOne($table, ['email' => $email]);
-		test($existence);
 
 		if ($existence && password_verify($pass, $existence['password'])) {
 

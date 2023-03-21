@@ -14,7 +14,8 @@ include('app/include/header.php');
 
 			<div class="mb-3 col-12 col-md-4">
 				<label for="formGroupExampleInput" class="form-label">E-mail</label>
-				<input type="email" class="form-control" name="email" id="formGroupExampleInput" placeholder="Email" />
+				<input type="email" class="form-control" name="email" value="<?= $email ?>" id="formGroupExampleInput"
+					placeholder="E-mail" />
 			</div>
 
 			<div class="w-100"></div>

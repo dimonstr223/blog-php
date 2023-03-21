@@ -1,5 +1,6 @@
 <?php
-include "app/db/db.php";
+// include 'app/db/db.php';
+include("app/controllers/topics.php");
 include('path.php');
 include('app/include/header.php')
 ?>
@@ -100,21 +101,11 @@ include('app/include/header.php')
       <div class="section topics">
         <h3 class="sidebar-title">Категории</h3>
         <ul class="topics-list">
-          <li class="topics-item">
-            <a class="topics-item__link" href="#">Программирование</a>
-          </li>
-          <li class="topics-item">
-            <a class="topics-item__link" href="#">Наука</a>
-          </li>
-          <li class="topics-item">
-            <a class="topics-item__link" href="#">Животноводство</a>
-          </li>
-          <li class="topics-item">
-            <a class="topics-item__link" href="#">Охота</a>
-          </li>
-          <li class="topics-item">
-            <a class="topics-item__link" href="#">Тренды</a>
-          </li>
+          <? foreach ($topics as $value) : ?>
+            <li class="topics-item">
+              <a class="topics-item__link" href="#"><?= $value['name'] ?></a>
+            </li>
+          <? endforeach ?>
         </ul>
       </div>
     </div>

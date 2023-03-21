@@ -11,6 +11,8 @@ function test($value)
 	echo '<pre>';
 	print_r($value);
 	echo '</pre>';
+
+	exit();
 }
 
 // ПРОВЕРКА ВЫПОЛНЕНИЯ ЗАПРОСА К БД

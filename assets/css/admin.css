@@ -113,6 +113,10 @@ header ul li a:hover {
 
 /* content */
 
+.items {
+  margin-bottom: 30px;
+}
+
 .post,
 .topic,
 .user,

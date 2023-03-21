@@ -17,7 +17,7 @@ include '../../app/include/header-admin.php';
 					<div class="table-title__item edit col-2 ">Редакт.</div>
 					<div class="table-title__item delete col-2 ">Удалить</div>
 				</div>
-				<div class="posts">
+				<div class="items">
 					<div class="row post">
 						<div class=" post__item id col-1">1</div>
 						<div class=" post__item name col-5">Какое-то Название</div>

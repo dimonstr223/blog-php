@@ -17,7 +17,7 @@ include '../../app/include/header-admin.php';
 					<div class="table-title__item email col-4">E-mail</div>
 					<div class="table-title__item edit col-2">Редактировать</div>
 				</div>
-				<div class="topics">
+				<div class="items">
 					<div class="row user">
 						<div class="user__item id col-1">1</div>
 						<div class="user__item role col-1">Admin</div>
