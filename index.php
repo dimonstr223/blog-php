@@ -57,7 +57,7 @@ include('app/include/header.php');
         </div>
         <div class="post_text col-12 col-md-8">
           <h3 class="post-title">
-            <a class="post-title__link" href="#">Прикольная статья на тему динамического сайта</a>
+            <a class="post-title__link" href="single-page.php">Прикольная статья на тему динамического сайта</a>
           </h3>
           <div class="icons">
             <i class="far fa-user">Имя автора</i>
