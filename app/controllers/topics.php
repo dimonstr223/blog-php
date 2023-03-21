@@ -1,7 +1,5 @@
 <?php
-include "path.php";
-
-include "app/db/db.php";
+include ROOT . "/app/db/db.php";
 
 $table = 'topics';
 $errMsg = '';

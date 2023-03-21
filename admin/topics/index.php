@@ -1,4 +1,5 @@
 <?php
+include '../../path.php';
 include '../../app/controllers/topics.php';
 include '../../app/include/header-admin.php';
 ?>
@@ -25,27 +26,6 @@ include '../../app/include/header-admin.php';
 							<div class="topic__item delete col-2 col-red"><a href="edit.php?del_id=<?= $value['id'] ?>">Delete</a></div>
 						</div>
 					<?php endforeach ?>
-
-
-
-					<!-- <div class="row topic">
-						<div class="topic__item id col-1">1</div>
-						<div class="topic__item name col-5">Какое-то Название</div>
-						<div class="topic__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class="topic__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
-					<div class="row topic">
-						<div class="topic__item id col-1">1</div>
-						<div class="topic__item name col-5">Какое-то Название</div>
-						<div class="topic__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class="topic__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
-					<div class="row topic">
-						<div class="topic__item id col-1">1</div>
-						<div class="topic__item name col-5">Какое-то Название</div>
-						<div class="topic__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class="topic__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div> -->
 				</div>
 			</div>
 		</div>

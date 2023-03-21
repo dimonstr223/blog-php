@@ -1,4 +1,5 @@
 <?php
+include '../../path.php';
 include '../../app/controllers/topics.php';
 require '../../app/include/header-admin.php';
 ?>
@@ -20,8 +21,7 @@ require '../../app/include/header-admin.php';
 					</div>
 					<div class="col-8">
 						<label for="body" class="form-label">Описание Категории</label>
-						<textarea class="form-control create-textarea" name="description" id="body"
-							rows="6"><?=$description?></textarea>
+						<textarea class="form-control create-textarea" name="description" id="body" rows="6"><?= $description ?></textarea>
 					</div>
 					<button type="submit" name="topic-submit" class="create-form__submit btn btn-success">Создать</button>
 				</form>

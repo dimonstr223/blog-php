@@ -1,7 +1,8 @@
 <?php
 
-
 require('connect.php');
+include ROOT . "/path.php";
+
 
 // метод запускат сессию
 session_start();

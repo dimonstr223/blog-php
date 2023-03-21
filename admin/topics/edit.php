@@ -1,4 +1,5 @@
 <?php
+include '../../path.php';
 include '../../app/controllers/topics.php';
 require '../../app/include/header-admin.php';
 ?>

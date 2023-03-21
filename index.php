@@ -1,8 +1,7 @@
 <?php
-// include 'app/db/db.php';
-include("app/controllers/topics.php");
-include('path.php');
-include('app/include/header.php')
+include 'path.php';
+include "app/controllers/topics.php";
+include('app/include/header.php');
 ?>
 <!-- carousel  -->
 <div class="container">
