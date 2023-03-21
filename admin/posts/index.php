@@ -1,4 +1,6 @@
 <?php
+include '../../path.php';
+include '../../app/controllers/posts.php';
 include '../../app/include/header-admin.php';
 ?>
 <div class="content">
@@ -18,34 +20,15 @@ include '../../app/include/header-admin.php';
 					<div class="table-title__item delete col-2 ">Удалить</div>
 				</div>
 				<div class="items">
-					<div class="row post">
-						<div class=" post__item id col-1">1</div>
-						<div class=" post__item name col-5">Какое-то Название</div>
-						<div class=" post__item author col-2">Димонстр</div>
-						<div class=" post__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class=" post__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
-					<div class="row post">
-						<div class=" post__item id col-1">1</div>
-						<div class=" post__item name col-5">Какое-то Название</div>
-						<div class=" post__item author col-2">Димонстр</div>
-						<div class=" post__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class=" post__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
-					<div class="row post">
-						<div class=" post__item id col-1">1</div>
-						<div class=" post__item name col-5">Какое-то Название</div>
-						<div class=" post__item author col-2">Димонстр</div>
-						<div class=" post__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class=" post__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
-					<div class="row post">
-						<div class=" post__item id col-1">1</div>
-						<div class=" post__item name col-5">Какое-то Название</div>
-						<div class=" post__item author col-2">Димонстр</div>
-						<div class=" post__item edit col-2 col-green"><a href="#">Edit</a></div>
-						<div class=" post__item delete col-2 col-red"><a href="#">Delete</a></div>
-					</div>
+					<?php foreach ($posts as $key => $value) : ?>
+						<div class="row post">
+							<div class=" post__item id col-1"><?= $key + 1; ?></div>
+							<div class=" post__item name col-5"><?= $value['title'] ?></div>
+							<div class=" post__item author col-2">Димонстр</div>
+							<div class=" post__item edit col-2 col-green"><a href="#">Edit</a></div>
+							<div class=" post__item delete col-2 col-red"><a href="#">Delete</a></div>
+						</div>
+					<? endforeach ?>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,8 @@
-<?php require '../../app/include/header-admin.php' ?>
+<?php
+include '../../path.php';
+include '../../app/controllers/posts.php';
+require '../../app/include/header-admin.php';
+?>
 
 <div class="content">
 	<div class="container">
@@ -10,29 +14,29 @@
 					<a href="index.php" class="btn btn-primary">Управление</a>
 				</div>
 				<h3 class="posts-title">Создать статью</h3>
-				<form class="create-form" action="create.php" action="post">
+				<form class="create-form" action="create.php" method="post">
+					<div class="col-8 col-red"><?= $errMsg ?></div>
 					<div class="col-8">
-						<label for="title" class="form-label">Название статьи</label>
-						<input type="text" class="form-control" id="title" placeholder="">
+						<label for="title" class="form-label">Заголовок</label>
+						<input type="text" name="title" value="<?= $title ?>" class="form-control" id="title" placeholder="">
 					</div>
 					<div class="col-8">
-						<label for="body" class="form-label">Содержимое статьи</label>
-						<textarea class="form-control create-textarea" id="body" rows="3"></textarea>
+						<label for="body" class="form-label">Содержимое</label>
+						<textarea class="form-control create-textarea" name="content" id="body" rows="3"><?= $content ?></textarea>
 					</div>
 					<div class="col-8">
-						<label for="formFile" class="form-label">Загрузите картинку</label>
-						<input class="form-control input-file" type="file" id="formFile">
+						<label for="formFile" class="form-label">Добавить картинку</label>
+						<input class="form-control input-file" name="img" type="file" id="formFile">
 					</div>
 					<div class="col-8">
-						<label for="select" class="form-label">Выберите категорию</label>
-						<select class="form-select" id="select">
-							<option selected>Open this select menu</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+						<label for="select" class="form-label">Выбрать категорию</label>
+						<select class="form-select" name="topic" id="select">
+							<?php foreach ($topics as $key => $value) : ?>
+								<option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+							<? endforeach ?>
 						</select>
 					</div>
-					<button type="submit" class="create-form__submit btn btn-success">Создать</button>
+					<button type="submit" name="post_create" class="create-form__submit btn btn-success">Создать</button>
 				</form>
 			</div>
 		</div>
