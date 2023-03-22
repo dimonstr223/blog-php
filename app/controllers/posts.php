@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_create'])) {
 	$content = trim($_POST['content']);
 	$img = trim($_POST['img']);
 	$topic = trim($_POST['topic']);
+	$status = $_POST['status'] ?  1 : 0;
 
 	if ($title === '' || $content === '') {
 		$errMsg = 'Не все поля заполнены!';
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_create'])) {
 			'img' => $img,
 			'content' => $content,
 			'id_topic' => $topic,
-			'status' => 1,
+			'status' => $status,
 		];
 
 		$item = insert($table, $post);
