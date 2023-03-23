@@ -14,7 +14,7 @@ require '../../app/include/header-admin.php';
 					<a href="index.php" class="btn btn-primary">Управление</a>
 				</div>
 				<h3 class="posts-title">Создать статью</h3>
-				<form class="create-form" action="create.php" method="post">
+				<form class="create-form" action="create.php" method="post" enctype="multipart/form-data">
 					<div class="col-8 col-red"><?= $errMsg ?></div>
 					<div class="col-8">
 						<label for="title" class="form-label">Заголовок</label>
@@ -22,8 +22,7 @@ require '../../app/include/header-admin.php';
 					</div>
 					<div class="col-8">
 						<label for="body" class="form-label">Содержимое</label>
-						<textarea class="form-control create-textarea" name="content" value="<?= $content ?>" id="body"
-							rows="3"><?= $content ?></textarea>
+						<textarea class="form-control create-textarea" name="content" value="<?= $content ?>" id="body" rows="3"><?= $content ?></textarea>
 					</div>
 					<div class="col-8">
 						<label for="formFile" class="form-label">Добавить картинку</label>
@@ -33,7 +32,7 @@ require '../../app/include/header-admin.php';
 						<label for="select" class="form-label">Выбрать категорию</label>
 						<select class="form-select" name="topic" id="select">
 							<?php foreach ($topics as $key => $value) : ?>
-							<option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+								<option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
 							<? endforeach ?>
 						</select>
 					</div>

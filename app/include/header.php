@@ -1,5 +1,4 @@
-<?php include 'path.php';
-?>
+<?php include 'path.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +21,7 @@
 			<div class="row">
 				<div class="col-4">
 					<h1>
-						<a href="<?= BASE_URL ?>"> My blog </a>
+						<a href="<?= BASE_URL ?>"> Blog </a>
 					</h1>
 				</div>
 				<nav class="col-8">
