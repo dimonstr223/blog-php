@@ -7,7 +7,7 @@ $errMsg = '';
 // запрашиваем топики из бд
 $topics = selectAll('topics');
 $posts = selectAll($table);
-// test($posts);
+$postsAdm = selectPostsWithUsers('posts', 'users');
 
 // действия после нажатия submit кнопки
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_create'])) {

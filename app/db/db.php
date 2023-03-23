@@ -161,8 +161,24 @@ function delete($table, $id)
 	$query->execute();
 }
 
-// test(selectAll('users', $params));
-// test(selectOne('users'));
-// test(insert('users', $arrData));
-// test(update('users', 2, $arrData));
-// test(delete('users', 9));
+// JOIN ТАБЛИЦ В MYSQL
+function selectPostsWithUsers($table1, $table2)
+{
+	global $pdo;
+	$sql = "
+		SELECT
+		t1.id,
+		t1.title,
+		t1.img,
+		t1.content,
+		t1.status,
+		t1.id_topic,
+		t1.created_date,
+		t2.username
+		FROM $table1 AS t1 JOIN $table2 AS t2 ON t1.id_user = t2.id
+	";
+	$query = $pdo->prepare($sql);
+	$query->execute();
+	errorCheck($query);
+	return $query->fetchAll();
+}
