@@ -6,7 +6,7 @@ if (!$_SESSION) {
 }
 
 $table = 'posts';
-$errMsg = '';
+$errMsg = [];
 
 // запрашиваем топики из бд
 $topics = selectAll('topics');
@@ -23,19 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_create'])) {
 		$dest = "D:\projects\blog-php\assets\images\posts\\" . $imgName;
 		$imgType = $_FILES['img']['type'];
 
-		if (strpos($imgType, 'image') === false) {
-			die('Файл не является картинкой');
-		}
-
 		$result = move_uploaded_file($tempFileName, $dest);
 
 		if ($result) {
 			$_POST['img'] = $imgName;
 		} else {
-			$errMsg = 'Ошибка загрузки изображения';
+			array_push($errMsg, 'Ошибка загрузки изображения');
 		}
 	} else {
-		$errMsg = 'Ошибка получения изображения';
+		array_push($errMsg, 'Ошибка получения изображения');
 	}
 
 	$title = trim($_POST['title']);
@@ -45,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_create'])) {
 	$status = $_POST['status'] ?  1 : 0;
 
 	if ($title === '' || $content === '') {
-		$errMsg = 'Не все поля заполнены!';
+		array_push($errMsg, 'Не все поля заполнены!');
 	} elseif (mb_strlen($title) < 2) {
-		$errMsg = 'Длина заголовка не менее 2 символов';
+		array_push($errMsg, 'Длина заголовка не менее 2 символов');
 	} else {
 		$post = [
 			'id_user' => $_SESSION['id'],

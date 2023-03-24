@@ -12,6 +12,12 @@ h6 {
   color: #5c5b5b;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #f6f6f6;
   display: flex;
